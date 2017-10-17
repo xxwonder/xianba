@@ -1,15 +1,11 @@
 package com.sampson.yjj.xianba.homepage;
 
-import android.app.Activity;
-import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.sampson.yjj.xianba.R;
@@ -24,6 +20,9 @@ public class HomeActivity extends BaseActivity {
     private LinearLayout homeWo;
     private ViewPager homeVp;
 
+    private ImageView home_shouye_img;
+    private ImageView home_fenlei_img;
+    private ImageView home_wo_img;
     private ArrayList<Fragment> fragments;
 
     private int currIndex;
@@ -42,6 +41,10 @@ public class HomeActivity extends BaseActivity {
         homeFenlei = (LinearLayout)findViewById(R.id.home_fenlei);
         homeWo = (LinearLayout)findViewById(R.id.home_wo);
         homeVp = (ViewPager)findViewById(R.id.home_viewpager);
+
+        home_shouye_img =(ImageView) findViewById(R.id.home_shouye_img);
+        home_fenlei_img = (ImageView) findViewById(R.id.home_fenlei_img);
+        home_wo_img =(ImageView) findViewById(R.id.home_wo_img);
     }
     private void initViewPager(){
 
@@ -69,30 +72,58 @@ public class HomeActivity extends BaseActivity {
         @Override
         public void onPageSelected(int arg0) {
             // TODO Auto-generated method stub
-            Animation animation = new TranslateAnimation(currIndex*one,arg0*one,0,0);//平移动画
-            currIndex = arg0;
-            animation.setFillAfter(true);//动画终止时停留在最后一帧，不然会回到没有执行前的状态
-            animation.setDuration(200);//动画持续时间0.2秒
-
+//
+            switch (arg0){
+                case 0:
+                    home_shouye_img.setImageResource(R.drawable.home_shouye2);
+                    home_fenlei_img.setImageResource(R.drawable.home_fenlei1);
+                    home_wo_img.setImageResource(R.drawable.home_wo1);
+                    break;
+                case 1:
+                    home_shouye_img.setImageResource(R.drawable.home_shouye1);
+                    home_fenlei_img.setImageResource(R.drawable.home_fenlei2);
+                    home_wo_img.setImageResource(R.drawable.home_wo1);
+                    break;
+                case 2:
+                    home_shouye_img.setImageResource(R.drawable.home_shouye1);
+                    home_fenlei_img.setImageResource(R.drawable.home_fenlei1);
+                    home_wo_img.setImageResource(R.drawable.home_wo2);
+                    break;
+            }
         }
     }
     private void InitBottomLinearLayout(){
+        homeFenlei.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                homeVp.setCurrentItem(1);
+                home_shouye_img.setImageResource(R.drawable.home_shouye1);
+                home_fenlei_img.setImageResource(R.drawable.home_fenlei2);
+                home_wo_img.setImageResource(R.drawable.home_wo1);
+            }
+        });
+        homeShouye.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                homeVp.setCurrentItem(0);
+                home_shouye_img.setImageResource(R.drawable.home_shouye2);
+                home_fenlei_img.setImageResource(R.drawable.home_fenlei1);
+                home_wo_img.setImageResource(R.drawable.home_wo1);
+            }
+        });
 
-        homeShouye.setOnClickListener(new LinearListener(0));
-        homeFenlei.setOnClickListener(new LinearListener(1));
-        homeWo.setOnClickListener(new LinearListener(2));
+        homeWo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                homeVp.setCurrentItem(2);
+                home_shouye_img.setImageResource(R.drawable.home_shouye1);
+                home_fenlei_img.setImageResource(R.drawable.home_fenlei1);
+                home_wo_img.setImageResource(R.drawable.home_wo2);
+            }
+        });
+
     }
-    //内部类 重写TextView点击事件
-    public class LinearListener implements View.OnClickListener{
-        private int index = 0;
-        public LinearListener(int i){
-            index = i;
-        }
-        @Override
-        public void onClick(View v){
-            homeVp.setCurrentItem(index);
-        }
-    }
+
     @Override
     public int getContentViewId() {
         return R.layout.activity_home;
