@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.sampson.yjj.xianba.R;
+import com.sampson.yjj.xianba.bean.XiaoHuaZuiXinBean;
+import com.sampson.yjj.xianba.utils.HandleJokeToBean;
 import com.sampson.yjj.xianba.utils.LogUtils;
 import com.sampson.yjj.xianba.utils.OkHttpUtil;
 
@@ -49,14 +51,18 @@ public class XiaoHuaActivity extends AppCompatActivity{
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
                         responseText = response.body().string();
+                        final XiaoHuaZuiXinBean xiaoHuaZuiXinBean = HandleJokeToBean.handleJokeResponse(responseText);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                textView.setText(responseText);
+                                textView.setText(xiaoHuaZuiXinBean.getContent());
                             }
                         });
                     }
                 });
     }
+    /**
+     *
+     */
 
 }
