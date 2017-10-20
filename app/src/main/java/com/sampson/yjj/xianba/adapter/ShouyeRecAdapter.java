@@ -1,5 +1,6 @@
 package com.sampson.yjj.xianba.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,9 @@ import android.widget.Toast;
 
 import com.sampson.yjj.xianba.R;
 import com.sampson.yjj.xianba.bean.ShouYeRecyleItem;
+import com.sampson.yjj.xianba.homepage.HomeActivity;
+import com.sampson.yjj.xianba.news.NewsActivity;
+import com.sampson.yjj.xianba.xiaohua.XiaoHuaActivity;
 
 import java.util.List;
 
@@ -49,7 +53,9 @@ public class ShouyeRecAdapter extends RecyclerView.Adapter<ShouyeRecAdapter.View
                 int position = mHolder.getAdapterPosition();
                 switch (position){
                     case 0:
-                        Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();
+                        Intent intent0 = new Intent(v.getContext(),NewsActivity.class);
+                        v.getContext().startActivity(intent0);
+//                        Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();
                         break;
                     case 1:
                         Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();
@@ -66,6 +72,11 @@ public class ShouyeRecAdapter extends RecyclerView.Adapter<ShouyeRecAdapter.View
                     case 5:
                         Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();
                         break;
+                    case 6:
+                        Intent intent6 = new Intent(v.getContext(),XiaoHuaActivity.class);
+                        v.getContext().startActivity(intent6);
+                        break;
+
                 }
             }
         });

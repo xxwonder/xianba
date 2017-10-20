@@ -51,9 +51,9 @@ public class ShouyeFragment  extends Fragment {
         ImageView view1 = (ImageView) inflater.inflate(R.layout.item, null);
         ImageView view2 = (ImageView) inflater.inflate(R.layout.item, null);
         ImageView view3 = (ImageView) inflater.inflate(R.layout.item, null);
-        view1.setImageResource(R.drawable.home_fenlei2);
-        view2.setImageResource(R.drawable.home_wo1);
-        view3.setImageResource(R.drawable.home_fenlei1);
+        view1.setImageResource(R.drawable.vp_one);
+        view2.setImageResource(R.drawable.vp_two);
+        view3.setImageResource(R.drawable.vp_threwe);
         ArrayList<ImageView> views = new ArrayList<ImageView>();
         views.add(view1);
         views.add(view2);
@@ -107,18 +107,21 @@ public class ShouyeFragment  extends Fragment {
      */
     private void initData(){
         mList.clear();
-        ShouYeRecyleItem shouYeRecyleItem1 = new ShouYeRecyleItem("农业新闻",R.drawable.home_fenlei1);
+        //单例
+        ShouYeRecyleItem shouYeRecyleItem1 = new ShouYeRecyleItem("农业新闻",R.drawable.shouye_nongye);
         mList.add(shouYeRecyleItem1);
-        ShouYeRecyleItem shouYeRecyleItem2 = new ShouYeRecyleItem("农业新闻",R.drawable.home_fenlei1);
-        mList.add(shouYeRecyleItem1);
-        ShouYeRecyleItem shouYeRecyleItem3 = new ShouYeRecyleItem("农业新闻",R.drawable.home_fenlei1);
-        mList.add(shouYeRecyleItem1);
-        ShouYeRecyleItem shouYeRecyleItem4 = new ShouYeRecyleItem("农业新闻",R.drawable.home_fenlei1);
-        mList.add(shouYeRecyleItem1);
-        ShouYeRecyleItem shouYeRecyleItem5 = new ShouYeRecyleItem("农业新闻",R.drawable.home_fenlei1);
-        mList.add(shouYeRecyleItem1);
-        ShouYeRecyleItem shouYeRecyleItem6 = new ShouYeRecyleItem("农业新闻",R.drawable.home_fenlei1);
-        mList.add(shouYeRecyleItem1);
+        ShouYeRecyleItem shouYeRecyleItem2 = new ShouYeRecyleItem("天气状况",R.drawable.shouye_tianqi);
+        mList.add(shouYeRecyleItem2);
+        ShouYeRecyleItem shouYeRecyleItem3 = new ShouYeRecyleItem("健康问答",R.drawable.shouye_jiankang);
+        mList.add(shouYeRecyleItem3);
+        ShouYeRecyleItem shouYeRecyleItem4 = new ShouYeRecyleItem("历史上的今天曾经...",R.drawable.shouye_lishi);
+        mList.add(shouYeRecyleItem4);
+        ShouYeRecyleItem shouYeRecyleItem5 = new ShouYeRecyleItem("有人说过...",R.drawable.shouye_mingren);
+        mList.add(shouYeRecyleItem5);
+        ShouYeRecyleItem shouYeRecyleItem6 = new ShouYeRecyleItem("姓氏起源",R.drawable.shouye_baijiaxing);
+        mList.add(shouYeRecyleItem6);
+        ShouYeRecyleItem shouYeRecyleItem7 = new ShouYeRecyleItem("幽默笑话",R.drawable.shouye_xiaohua);
+        mList.add(shouYeRecyleItem7);
     }
 
 
