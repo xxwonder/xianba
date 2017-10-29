@@ -18,12 +18,16 @@ public class UrlContents {
      */
     public static final String XIAOHUAN_APPKEY = "2d7f299aad11407ba4bd2a69322adc96";
     /**
-     * 按更新时间查询笑话
+     * 按更新时间查询笑话XIAOHUA_CHAXUN
      */
     public static final String XIAOHUA_CHAXUN = "http://api.avatardata.cn/Joke/QueryJokeByTime";
     /**
      * 查找最新笑话
      */
     public static final String XIAOHUA_ZUIXIN = "http://api.avatardata.cn/Joke/NewstJoke";
+    /**
+     * 查找最新笑话趣图
+     */
+    public static final String QUTU_CHAXUN = "http://api.avatardata.cn/Joke/QueryImgByTime";
 }
 //http://api.avatardata.cn/Joke/NewstJoke?key=2d7f299aad11407ba4bd2a69322adc96

@@ -93,4 +93,6 @@ public class ShouyeRecAdapter extends RecyclerView.Adapter<ShouyeRecAdapter.View
     public int getItemCount() {
         return mList.size();
     }
+
+
 }
