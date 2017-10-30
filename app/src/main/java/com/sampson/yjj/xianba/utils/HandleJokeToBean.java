@@ -36,16 +36,18 @@ public class HandleJokeToBean {
      * 将返回的JSON数据解析成笑话实体类
      * 笑话最新
      */
-    public static List<XiaoHuaZuiXinBean> handleJokeResponseList(String response)
+    public static List<QuTuBean> handleJokeResponseList(String response)
     {
         try {
             JSONObject jsonObject = new JSONObject(response);
             JSONArray jsonArray = jsonObject.getJSONArray("result");
-            List<XiaoHuaZuiXinBean> mList = new ArrayList<>();
+            List<QuTuBean> mList = new ArrayList<>();
+//            List<XiaoHuaZuiXinBean> mList = new ArrayList<>();
             for (int i=0;i<jsonArray.length();i++)
             {
                 String JokeContent = jsonArray.getJSONObject(i).toString();
-                mList.add(new Gson().fromJson(JokeContent,XiaoHuaZuiXinBean.class));
+                mList.add(new Gson().fromJson(JokeContent,QuTuBean.class));
+//                mList.add(new Gson().fromJson(JokeContent,XiaoHuaZuiXinBean.class));
             }
             return mList;
         } catch (JSONException e) {
@@ -67,6 +69,30 @@ public class HandleJokeToBean {
             {
                 String QuTuContent = jsonArray.getJSONObject(i).toString();
                 mList.add(new Gson().fromJson(QuTuContent,QuTuBean.class));
+            }
+            return mList;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static <T> List<T> jsonTOList(String responseStr, Class<T> cls){
+        List<T> mList = null;
+        try {
+            JSONObject jsonObject = new JSONObject(responseStr);
+            JSONObject jsonObject1 = jsonObject.getJSONObject("result");
+            JSONArray jsonArray = jsonObject1.getJSONArray("data");
+
+            if(mList==null)
+            {
+                mList=new ArrayList<>();
+            }
+            for (int i=0;i<jsonArray.length();i++)
+            {
+                String content = jsonArray.getJSONObject(i).toString();
+
+                mList.add(new Gson().fromJson(content,cls));
             }
             return mList;
         } catch (JSONException e) {

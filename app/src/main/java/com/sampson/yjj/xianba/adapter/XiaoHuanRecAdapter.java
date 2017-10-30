@@ -1,6 +1,7 @@
 package com.sampson.yjj.xianba.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.sampson.yjj.xianba.R;
 import com.sampson.yjj.xianba.bean.QuTuBean;
 import com.sampson.yjj.xianba.bean.XiaoHuaZuiXinBean;
+import com.sampson.yjj.xianba.xiaohua.ShowImageActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +22,12 @@ import java.util.List;
  * Created by yjj on 2017/10/20.
  */
 
-public class XiaoHuanRecAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class XiaoHuanRecAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
+       {
+
     List<XiaoHuaZuiXinBean>mXiaoHuaList = new ArrayList<>();
     List<QuTuBean>mQuTyList = new ArrayList<>();
+    List<QuTuBean> list = new ArrayList();
     Context context;
     //自定义监听事件
     public static interface OnRecyclerViewItemClickListener {
@@ -34,6 +39,11 @@ public class XiaoHuanRecAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         mOnItemClickListener = listener;
     }
 
+    public XiaoHuanRecAdapter(Context context,List<QuTuBean> list) {
+        super();
+        this.context = context;
+        this.list = list;
+    }
     public XiaoHuanRecAdapter(Context context,List<XiaoHuaZuiXinBean>mXiaoHuaList, List<QuTuBean>mQuTyList) {
         super();
         this.context = context;
@@ -42,32 +52,29 @@ public class XiaoHuanRecAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, final int i) {
 
-        if(i%2==0)
-        {
-//            if(viewHolder instanceof ViewHolder1){
-                Glide.with(context).load(mQuTyList.get(i).getUrl()).into(((ViewHolder1) viewHolder).imageView);
-                ((ViewHolder1) viewHolder).imageName.setText(mQuTyList.get(i).getContent());
-//            }
-        }else{
-//            if(viewHolder instanceof ViewHolder2){
-                ((ViewHolder2) viewHolder).content.setText(mXiaoHuaList.get(i).getContent());
-                ((ViewHolder2) viewHolder).time.setText(mXiaoHuaList.get(i).getUpdatetime());
-//            }
+
+        if (viewHolder instanceof ViewHolder1) {
+            Glide.with(context).load(list.get(i).getUrl()).placeholder(R.drawable.app_icon).into(((ViewHolder1) viewHolder).imageView);
+            ((ViewHolder1) viewHolder).imageName.setText(list.get(i).getContent());
+            ((ViewHolder1) viewHolder).imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, ShowImageActivity.class);
+                    intent.putExtra("url",list.get(i).getUrl());
+                    context.startActivity(intent);
+                }
+            });
+        } else if (viewHolder instanceof ViewHolder2) {
+            ((ViewHolder2) viewHolder).content.setText(list.get(i).getContent());
+            ((ViewHolder2) viewHolder).time.setText(list.get(i).getUpdatetime());
         }
-//        if(viewHolder instanceof ViewHolder1){
-//            Glide.with(context).load(mQuTyList.get(i).getUrl()).into(((ViewHolder1) viewHolder).imageView);
-//            ((ViewHolder1) viewHolder).imageName.setText(mQuTyList.get(i).getContent());
-//        }else if(viewHolder instanceof ViewHolder2){
-//            ((ViewHolder2) viewHolder).content.setText(mXiaoHuaList.get(i).getContent());
-//            ((ViewHolder2) viewHolder).time.setText(mXiaoHuaList.get(i).getUpdatetime());
-//        }
     }
 
     @Override
     public int getItemCount() {
-        return mXiaoHuaList.size()+mQuTyList.size();
+        return list.size();
 //        return 20;
     }
 

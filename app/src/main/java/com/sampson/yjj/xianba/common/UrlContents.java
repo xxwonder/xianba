@@ -5,10 +5,7 @@ package com.sampson.yjj.xianba.common;
  */
 
 public class UrlContents {
-    /**
-     * 新闻分类AppKey-----》》d5c2797bad474cd3a0a180fabe1866e7《《----
-     */
-    public static final String NEWS_APPKEY = "947e066262bc49ee92b2a0f9f1e29225";
+
     /**
      * 新闻分类
      */
@@ -29,5 +26,13 @@ public class UrlContents {
      * 查找最新笑话趣图
      */
     public static final String QUTU_CHAXUN = "http://api.avatardata.cn/Joke/QueryImgByTime";
+
+    /**
+     * 新闻头条
+     */
+    public static final String NEWS_TOUTIAO ="http://api.avatardata.cn/TouTiao/Query?key=";
+    /**
+     * 新闻头条APPKEY
+     */
+    public static final String NEWS_APPKEY = "11be0f571746471b809e516c33598fe2";
 }
-//http://api.avatardata.cn/Joke/NewstJoke?key=2d7f299aad11407ba4bd2a69322adc96
