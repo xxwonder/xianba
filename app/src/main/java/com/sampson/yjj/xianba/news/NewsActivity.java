@@ -78,6 +78,10 @@ public class NewsActivity extends BaseActivity {
                     public void run() {
                         initRecycleAdapter();
                         hideProgressDialog();
+                        if(swipeRefreshLayout.isRefreshing())
+                        {
+                            swipeRefreshLayout.setRefreshing(false);
+                        }
                     }
                 });
             }
@@ -93,9 +97,12 @@ public class NewsActivity extends BaseActivity {
             @Override
             public void onRefresh() {
 //                refreshNews();
-                initRecycleAdapter();
-                hideProgressDialog();
+//                initRecycleAdapter();
+//                hideProgressDialog();
+                getNewsData(newsUrl);
+
             }
+
         });
     }
     /**
@@ -106,6 +113,7 @@ public class NewsActivity extends BaseActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(NewsActivity.this,1,GridLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(mAdapter);
+//        hideProgressDialog();
     }
 
     private ProgressDialog progressDialog;

@@ -46,11 +46,23 @@ public class NewsRecycleAdapter extends RecyclerView.Adapter<NewsRecycleAdapter.
     }
 
     @Override
-    public NewsRecycleAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, final int i) {
+    public NewsRecycleAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).
                 inflate(R.layout.newsrecycle_item,viewGroup,false);
         ViewHolder mHolder = new ViewHolder(view);
-        mHolder.newsView.setOnClickListener(new View.OnClickListener() {
+
+        return mHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(NewsRecycleAdapter.ViewHolder viewHolder, final int i) {
+        NewsTopBean mNesBean = mList.get(i);
+        viewHolder.titleTxt.setText(mNesBean.getTitle());
+        viewHolder.authorTxt.setText(mNesBean.getAuthor_name());
+        viewHolder.timeTxt.setText(mNesBean.getDate());
+        Glide.with(context).load(mNesBean.getThumbnail_pic_s()).
+                placeholder(R.drawable.app_icon).into(viewHolder.thumbImg);
+        viewHolder.newsView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,NewsDetailActivity.class);
@@ -58,17 +70,6 @@ public class NewsRecycleAdapter extends RecyclerView.Adapter<NewsRecycleAdapter.
                 context.startActivity(intent);
             }
         });
-        return mHolder;
-    }
-
-    @Override
-    public void onBindViewHolder(NewsRecycleAdapter.ViewHolder viewHolder, int i) {
-        NewsTopBean mNesBean = mList.get(i);
-        viewHolder.titleTxt.setText(mNesBean.getTitle());
-        viewHolder.authorTxt.setText(mNesBean.getAuthor_name());
-        viewHolder.timeTxt.setText(mNesBean.getDate());
-        Glide.with(context).load(mNesBean.getThumbnail_pic_s()).
-                placeholder(R.drawable.app_icon).into(viewHolder.thumbImg);
     }
 
     @Override
