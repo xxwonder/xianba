@@ -11,9 +11,11 @@ import android.widget.Toast;
 
 import com.sampson.yjj.xianba.R;
 import com.sampson.yjj.xianba.bean.ShouYeRecyleItem;
+import com.sampson.yjj.xianba.famouspeople.MingRenMingYanActivity;
 import com.sampson.yjj.xianba.firstname.FirstNameActivity;
 import com.sampson.yjj.xianba.homepage.HomeActivity;
 import com.sampson.yjj.xianba.news.NewsActivity;
+import com.sampson.yjj.xianba.todayhistory.HistoryToday;
 import com.sampson.yjj.xianba.xiaohua.XiaoHuaActivity;
 
 import java.util.List;
@@ -65,10 +67,16 @@ public class ShouyeRecAdapter extends RecyclerView.Adapter<ShouyeRecAdapter.View
                         Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();
                         break;
                     case 3:
-                        Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();
+                        Intent intent3 = new Intent(v.getContext(),HistoryToday.class);
+                        intent3.setFlags(0);
+                        v.getContext().startActivity(intent3);
                         break;
                     case 4:
-                        Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();
+                        Intent intent4 = new Intent(v.getContext(),MingRenMingYanActivity.class);
+                        intent4.setFlags(0);
+                        v.getContext().startActivity(intent4);
                         break;
                     case 5:
 //                        Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();

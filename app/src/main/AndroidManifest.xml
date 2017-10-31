@@ -26,7 +26,10 @@
         <activity android:name=".xiaohua.ShowImageActivity" />
         <activity android:name=".news.NewsDetailActivity" />
         <activity android:name=".firstname.FirstNameActivity" />
-        <activity android:name=".firstname.XingShiSearchActivity"></activity>
+        <activity android:name=".firstname.XingShiSearchActivity" />
+        <activity android:name=".todayhistory.HistoryToday" />
+        <activity android:name=".todayhistory.SearchHistoryDayActivity" />
+        <activity android:name=".famouspeople.MingRenMingYanActivity"></activity>
     </application>
 
 </manifest>

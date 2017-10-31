@@ -48,4 +48,16 @@ public class UrlContents {
      * 姓氏起源suiji
      */
     public static final String FIRST_NAME_RADOM ="http://api.avatardata.cn/XingShiQiYuan/Random?key=";
+    /**
+     * 历史上的今天
+     */
+    public static final String HISTORY_TODAY="http://api.avatardata.cn/HistoryToday/LookUp?key=df184597cbda49ff92a5b861d7cfe827";
+    /**
+     * 随机返回一条名人名言
+     */
+    public static final String FAMOUS_PEOPLE="http://api.avatardata.cn/MingRenMingYan/Random?key=a116c099ea8540cda3a76bbe35ac4efa";
+    /** 查询名人名言
+     */
+    public static final String FAMOUS_PEOPLE_CHAXUN="http://api.avatardata.cn/MingRenMingYan/LookUp?" +
+            "key=a116c099ea8540cda3a76bbe35ac4efa&keyword=";
 }

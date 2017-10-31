@@ -77,12 +77,54 @@ public class HandleJokeToBean {
         return null;
     }
 
+    /**
+     * 比下一个多个大括号
+     * @param responseStr
+     * @param cls
+     * @param <T>
+     * @return
+     */
     public static <T> List<T> jsonTOList(String responseStr, Class<T> cls){
         List<T> mList = null;
         try {
             JSONObject jsonObject = new JSONObject(responseStr);
             JSONObject jsonObject1 = jsonObject.getJSONObject("result");
             JSONArray jsonArray = jsonObject1.getJSONArray("data");
+
+            if(mList==null)
+            {
+                mList=new ArrayList<>();
+            }
+            for (int i=0;i<jsonArray.length();i++)
+            {
+                String content = jsonArray.getJSONObject(i).toString();
+
+                mList.add(new Gson().fromJson(content,cls));
+            }
+            return mList;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * {
+     "total": 27,
+     "result": [
+     {
+     "year": 2002,
+     "month": 1,
+     "day": 1,
+     "title": "欧元正式进入流通",
+     "type": 1
+     },这种格式
+     */
+    public static <T> List<T> json2TOList(String responseStr, Class<T> cls){
+        List<T> mList = null;
+        try {
+            JSONObject jsonObject = new JSONObject(responseStr);
+            JSONArray jsonArray = jsonObject.getJSONArray("result");
 
             if(mList==null)
             {

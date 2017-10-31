@@ -112,7 +112,7 @@ public class ShouyeFragment  extends Fragment {
         mList.add(shouYeRecyleItem1);
         ShouYeRecyleItem shouYeRecyleItem2 = new ShouYeRecyleItem("天气状况",R.drawable.shouye_tianqi);
         mList.add(shouYeRecyleItem2);
-        ShouYeRecyleItem shouYeRecyleItem3 = new ShouYeRecyleItem("健康问答",R.drawable.shouye_jiankang);
+        ShouYeRecyleItem shouYeRecyleItem3 = new ShouYeRecyleItem("电视节目",R.drawable.shouye_jiankang);
         mList.add(shouYeRecyleItem3);
         ShouYeRecyleItem shouYeRecyleItem4 = new ShouYeRecyleItem("历史上的今天曾经...",R.drawable.shouye_lishi);
         mList.add(shouYeRecyleItem4);
