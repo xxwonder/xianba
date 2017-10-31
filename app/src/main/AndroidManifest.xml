@@ -24,7 +24,9 @@
         <activity android:name=".news.NewsActivity" />
         <activity android:name=".xiaohua.XiaoHuaActivity" />
         <activity android:name=".xiaohua.ShowImageActivity" />
-        <activity android:name=".news.NewsDetailActivity"></activity>
+        <activity android:name=".news.NewsDetailActivity" />
+        <activity android:name=".firstname.FirstNameActivity" />
+        <activity android:name=".firstname.XingShiSearchActivity"></activity>
     </application>
 
 </manifest>

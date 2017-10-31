@@ -16,16 +16,16 @@ public class NewsDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_detail);
+        showProgressDialog("","正在加载");
         init();
+        hideProgressDialog();
     }
     private void init(){
-        showProgressDialog("","正在加载");
         String url = getIntent().getStringExtra("url");
         news_webview = (WebView)findViewById(R.id.news_webview);
         news_webview.setWebChromeClient(new WebChromeClient());
         news_webview.setWebViewClient(new WebViewClient());
         news_webview.loadUrl(url);
-        hideProgressDialog();
     }
     private ProgressDialog progressDialog;
     public void showProgressDialog(String title, String message) {

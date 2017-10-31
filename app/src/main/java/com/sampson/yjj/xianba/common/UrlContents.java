@@ -35,4 +35,17 @@ public class UrlContents {
      * 新闻头条APPKEY
      */
     public static final String NEWS_APPKEY = "11be0f571746471b809e516c33598fe2";
+    /**
+     * 姓氏起源*/
+//    http://api.avatardata.cn/XingShiQiYuan/LookUp?key=150aeffa70dd457c87e6cbf1d02996f4&xingshi=百里
+    public static final String FIRST_NAME_CHAXUN = "http://api.avatardata.cn/XingShiQiYuan/LookUp?key=";
+
+     /**
+     * 姓氏起源appkey
+     */
+     public static final String FIRST_NAME_KEY = "150aeffa70dd457c87e6cbf1d02996f4";
+    /**
+     * 姓氏起源suiji
+     */
+    public static final String FIRST_NAME_RADOM ="http://api.avatardata.cn/XingShiQiYuan/Random?key=";
 }

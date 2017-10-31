@@ -108,7 +108,7 @@ public class ShouyeFragment  extends Fragment {
     private void initData(){
         mList.clear();
         //单例
-        ShouYeRecyleItem shouYeRecyleItem1 = new ShouYeRecyleItem("农业新闻",R.drawable.shouye_nongye);
+        ShouYeRecyleItem shouYeRecyleItem1 = new ShouYeRecyleItem("时事新闻",R.drawable.shouye_nongye);
         mList.add(shouYeRecyleItem1);
         ShouYeRecyleItem shouYeRecyleItem2 = new ShouYeRecyleItem("天气状况",R.drawable.shouye_tianqi);
         mList.add(shouYeRecyleItem2);

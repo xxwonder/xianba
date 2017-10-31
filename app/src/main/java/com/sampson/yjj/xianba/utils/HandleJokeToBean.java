@@ -100,4 +100,19 @@ public class HandleJokeToBean {
         }
         return null;
     }
+    /**
+     * 姓氏起源随机
+     */
+    public static <T> T jsonToBean(String responseStr, Class<T> cls){
+        T t =null;
+        try {
+            JSONObject jsonObject = new JSONObject(responseStr);
+            String content = jsonObject.getJSONObject("result").toString();
+            t = new Gson().fromJson(content,cls);
+            return t;
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
