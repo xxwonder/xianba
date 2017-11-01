@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:padding="5dp"
+    android:layout_height="50dp">
+    <TextView
+        android:id="@+id/tv2_content"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/tv2_show"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        android:layout_width="50dp"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"
+        android:layout_height="40dp"
+        android:text="观看"/>
+</LinearLayout>

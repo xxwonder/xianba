@@ -16,6 +16,7 @@ import com.sampson.yjj.xianba.firstname.FirstNameActivity;
 import com.sampson.yjj.xianba.homepage.HomeActivity;
 import com.sampson.yjj.xianba.news.NewsActivity;
 import com.sampson.yjj.xianba.todayhistory.HistoryToday;
+import com.sampson.yjj.xianba.tv.TVActivity;
 import com.sampson.yjj.xianba.xiaohua.XiaoHuaActivity;
 
 import java.util.List;
@@ -64,7 +65,10 @@ public class ShouyeRecAdapter extends RecyclerView.Adapter<ShouyeRecAdapter.View
                         Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();
                         break;
                     case 2:
-                        Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(v.getContext(),TVActivity.class);
+                        intent2.setFlags(0);
+                        v.getContext().startActivity(intent2);
                         break;
                     case 3:
 //                        Toast.makeText(v.getContext(),"位置"+position,Toast.LENGTH_SHORT).show();

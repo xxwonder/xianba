@@ -23,7 +23,7 @@ public class NewsDetailActivity extends AppCompatActivity {
     private void init(){
         String url = getIntent().getStringExtra("url");
         news_webview = (WebView)findViewById(R.id.news_webview);
-        news_webview.setWebChromeClient(new WebChromeClient());
+        news_webview.getSettings().setJavaScriptEnabled(true);
         news_webview.setWebViewClient(new WebViewClient());
         news_webview.loadUrl(url);
     }

@@ -29,7 +29,11 @@
         <activity android:name=".firstname.XingShiSearchActivity" />
         <activity android:name=".todayhistory.HistoryToday" />
         <activity android:name=".todayhistory.SearchHistoryDayActivity" />
-        <activity android:name=".famouspeople.MingRenMingYanActivity"></activity>
+        <activity android:name=".famouspeople.MingRenMingYanActivity" />
+        <activity android:name=".tv.TVActivity" />
+        <activity android:name=".tv.TVSortActivity" />
+        <activity android:name=".tv.TVDetailActivity" />
+        <activity android:name=".weather.WeatherActivity"></activity>
     </application>
 
 </manifest>

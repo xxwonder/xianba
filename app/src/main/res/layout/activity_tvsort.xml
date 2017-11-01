@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sampson.yjj.xianba.tv.TVSortActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#4B77cc"
+        android:layout_height="40dp">
+        <ImageView
+            android:id="@+id/tv2_back_img"
+            android:layout_width="30dp"
+            android:layout_height="24dp"
+            android:src="@drawable/back_img"/>
+        <TextView
+            android:id="@+id/tv2_title"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="#eeeeee"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="节目分类"/>
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/tv2_recycle"
+        android:layout_marginTop="5dp"
+        android:padding="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

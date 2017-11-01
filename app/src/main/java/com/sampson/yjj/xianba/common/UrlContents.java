@@ -60,4 +60,11 @@ public class UrlContents {
      */
     public static final String FAMOUS_PEOPLE_CHAXUN="http://api.avatardata.cn/MingRenMingYan/LookUp?" +
             "key=a116c099ea8540cda3a76bbe35ac4efa&keyword=";
+    /**
+     * TV1 URL
+     */
+    public static final String TV_ONE = "http://api.avatardata.cn/TVTime/Query?key=dba5df17ab7a4636972dcd1d62eb8fc7";/**
+     * TV1 URL
+     */
+    public static final String TV_TWO = "http://api.avatardata.cn/TVTime/LookUp?key=dba5df17ab7a4636972dcd1d62eb8fc7&pId=";
 }
