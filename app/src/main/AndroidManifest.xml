@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="org.litepal.LitePalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
@@ -33,7 +34,14 @@
         <activity android:name=".tv.TVActivity" />
         <activity android:name=".tv.TVSortActivity" />
         <activity android:name=".tv.TVDetailActivity" />
-        <activity android:name=".weather.WeatherActivity"></activity>
+        <activity android:name=".weather.WeatherActivity" />
+
+        <service
+            android:name=".service.AutoUpdateService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".weather.WeatherAreaActivity"></activity>
     </application>
 
 </manifest>
